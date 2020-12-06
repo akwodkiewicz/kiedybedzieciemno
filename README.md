@@ -16,7 +16,7 @@ Innymi słowy, jeśli często zadajesz sobie pytanie "kiedy będzie ciemno?", to
 
 ## Technologia
 
-Strona została utworzona z wykorzystaniem najnowszych technologii, takich jak HTML, CSS oraz ECMAScript.
+Strona została utworzona z wykorzystaniem najnowszych technologii, takich jak HTML, CSS oraz Javascript. 
 
 Do wyliczenia Twojej pozycji we wszechświecie strona wykorzysta pobliskie punkty odniesienia oraz (jeśli to możliwe) satelity umieszczone na orbicie okołoziemskiej.
 
