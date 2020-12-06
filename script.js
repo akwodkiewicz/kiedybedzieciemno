@@ -7,7 +7,9 @@ const zdobądźLokalizacjęUżytkownika = () => {
 }
 
 const zdobądźDatęZmierzchuCywilnego = async (długość, szerokość) => {
-    const adres = `https://api.sunrise-sunset.org/json?lat=${szerokość}&lng=${długość}&formatted=0`;
+    const data = new Date();
+    const sformatowanaData = `${data.getFullYear()}-${data.getMonth()}-${data.getDate()}`;
+    const adres = `https://api.sunrise-sunset.org/json?lat=${szerokość}&lng=${długość}&date=${sformatowanaData}&formatted=0`;
     const odpowiedź = await fetch(adres);
     const treśćOdpowiedzi = await odpowiedź.json();
     console.log('treśćOdpowiedzi:', treśćOdpowiedzi)
