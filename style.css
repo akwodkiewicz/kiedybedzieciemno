@@ -7,21 +7,12 @@ body {
 }
 
 main {
-    min-height: 80vh;
+    min-height: 75vh;
 }
 
 main p {
     padding-top: 35vh;
     margin-top: 0;
-}
-
-footer {
-    font-size: 0.45em;
-    color: #666
-}
-
-.ikonki {
-    scale: 0.85;
 }
 
 .ikonki * {
