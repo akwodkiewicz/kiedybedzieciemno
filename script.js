@@ -18,7 +18,11 @@ const zdobądźDatęZmierzchuCywilnego = async (długość, szerokość) => {
 
 /** @param data {Date} */
 const ustawGodzinęWHtmlu = (data) => {
-    document.getElementById('zdanie').innerHTML = 'Dzisiaj będzie ciemno od';
+    if (new Date() > data) {
+        document.getElementById('zdanie').innerHTML = 'Jest już ciemno od';
+    } else {
+        document.getElementById('zdanie').innerHTML = 'Dzisiaj będzie ciemno od';
+    }
     document.getElementById('czas-zmierzchu-cywilnego').innerHTML = data.toLocaleTimeString();
 }
 
