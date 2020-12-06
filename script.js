@@ -8,7 +8,7 @@ const zdobądźLokalizacjęUżytkownika = () => {
 
 const zdobądźDatęZmierzchuCywilnego = async (długość, szerokość) => {
     const data = new Date();
-    const sformatowanaData = `${data.getFullYear()}-${data.getMonth()}-${data.getDate()}`;
+    const sformatowanaData = `${data.getFullYear()}-${data.getMonth()+1}-${data.getDate()}`;
     const adres = `https://api.sunrise-sunset.org/json?lat=${szerokość}&lng=${długość}&date=${sformatowanaData}&formatted=0`;
     const odpowiedź = await fetch(adres);
     const treśćOdpowiedzi = await odpowiedź.json();
