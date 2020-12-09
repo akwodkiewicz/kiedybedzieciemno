@@ -13,7 +13,7 @@ const zdobądźDatęZmierzchuCywilnego = async (długość, szerokość) => {
     const odpowiedź = await fetch(adres);
     const treśćOdpowiedzi = await odpowiedź.json();
     console.log('treśćOdpowiedzi:', treśćOdpowiedzi)
-    return new Date(treśćOdpowiedzi.results.civil_twilight_end);
+    return new Date(treśćOdpowiedzi.results.nautical_twilight_end);
 }
 
 /** @param data {Date} */
@@ -23,7 +23,7 @@ const ustawGodzinęWHtmlu = (data) => {
     } else {
         document.getElementById('zdanie').innerHTML = 'Dzisiaj będzie ciemno od';
     }
-    document.getElementById('czas-zmierzchu-cywilnego').innerHTML = data.toLocaleTimeString();
+    document.getElementById('godzina').innerHTML = data.toLocaleTimeString();
 }
 
 const głównaFunkcja = async () => {
