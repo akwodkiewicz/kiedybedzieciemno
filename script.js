@@ -13,7 +13,7 @@ const zdobądźDatęZmierzchuCywilnego = async (szerokość, długość) => {
     const odpowiedź = await fetch(adres);
     const treśćOdpowiedzi = await odpowiedź.json();
     console.log('treśćOdpowiedzi:', treśćOdpowiedzi)
-    return new Date(treśćOdpowiedzi.results.nautical_twilight_end);
+    return new Date(treśćOdpowiedzi.results.civil_twilight_end);
 }
 
 /** @param data {Date} */
