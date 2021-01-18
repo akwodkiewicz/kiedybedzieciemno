@@ -6,14 +6,14 @@ const zdobądźLokalizacjęUżytkownika = () => {
     })
 }
 
-const zdobądźDatęZmierzchuCywilnego = async (szerokość, długość) => {
+const zdobądźDatęZajściaSłońca = async (szerokość, długość) => {
     const data = new Date();
     const sformatowanaData = `${data.getFullYear()}-${data.getMonth()+1}-${data.getDate()}`;
     const adres = `https://api.sunrise-sunset.org/json?lat=${szerokość}&lng=${długość}&date=${sformatowanaData}&formatted=0`;
     const odpowiedź = await fetch(adres);
     const treśćOdpowiedzi = await odpowiedź.json();
     console.log('treśćOdpowiedzi:', treśćOdpowiedzi)
-    return new Date(treśćOdpowiedzi.results.civil_twilight_end);
+    return new Date(treśćOdpowiedzi.results.sunset);
 }
 
 /** @param data {Date} */
@@ -31,7 +31,7 @@ const głównaFunkcja = async () => {
     console.log('dokładność:', lokalizacja.accuracy, 'm');
     console.log('szerokość:', lokalizacja.latitude);
     console.log('długość:', lokalizacja.longitude);
-    const dataZajściaSłońca = await zdobądźDatęZmierzchuCywilnego(lokalizacja.latitude, lokalizacja.longitude);
+    const dataZajściaSłońca = await zdobądźDatęZajściaSłońca(lokalizacja.latitude, lokalizacja.longitude);
     ustawGodzinęWHtmlu(dataZajściaSłońca);
 }
 
